@@ -13,6 +13,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        System.out.printf("Welcome");
+        System.out.printf("Inregistrare");
     }
 }
