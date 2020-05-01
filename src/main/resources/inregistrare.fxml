@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="662.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ap.controllers.Inregistrare">
+   <stylesheets>
+      <URL value="@style.scss" />
+   </stylesheets>
+   <children>
+      <Pane layoutX="214.0" layoutY="445.0">
+         <children>
+            <RadioButton layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="71.0" selected="true" text="Client">
+               <toggleGroup>
+                  <ToggleGroup fx:id="rol" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="14.0" layoutY="49.0" mnemonicParsing="false" text="Antrenor" toggleGroup="$rol" />
+         </children>
+      </Pane>
+      <Label layoutX="351.0" layoutY="58.0" text="Inregistrare">
+         <font>
+            <Font name="System Bold" size="44.0" />
+         </font>
+      </Label>
+      <Button layoutX="351.0" layoutY="545.0" mnemonicParsing="false" onAction="#buttonclick" prefHeight="65.0" prefWidth="205.0" text="Inregistrare" />
+      <Label fx:id="hidden_nume" layoutX="228.0" layoutY="171.0" styleClass="hidden" text="Numele trebuie sa contina minim 3 caractere si poate sa contina doar caractere si spatii !" textFill="RED" underline="true" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Label>
+      <TextField fx:id="nume" layoutX="228.0" layoutY="140.0" prefHeight="31.0" prefWidth="469.0" />
+      <TextField layoutX="228.0" layoutY="316.0" prefHeight="31.0" prefWidth="469.0" />
+      <TextField fx:id="nr_tel" layoutX="228.0" layoutY="378.0" prefHeight="31.0" prefWidth="469.0" />
+      <TextField layoutX="228.0" layoutY="258.0" prefHeight="31.0" prefWidth="469.0" />
+      <PasswordField fx:id="password" layoutX="228.0" layoutY="202.0" prefHeight="31.0" prefWidth="469.0" styleClass="password" />
+      <Label layoutX="143.0" layoutY="145.0" text="Nume">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="321.0" text="Adresa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="145.0" layoutY="378.0" text="Nr. Tel">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="263.0" text="Username">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="207.0" text="Parola">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="459.0" text="Rolul">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="hidden_nr" layoutX="228.0" layoutY="409.0" styleClass="hidden" text="Numarul de telefon poate contine doar cifre!" textFill="RED" underline="true" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Label>
+   </children>
+</AnchorPane>

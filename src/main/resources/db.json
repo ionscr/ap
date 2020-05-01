@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "nume": "Admin",
+      "adresa": "Timisoara",
+      "telefon": "07777777777",
+      "username": "Admin",
+      "parola": "admin",
+      "rol": 1
+    }
+  ]
+}
