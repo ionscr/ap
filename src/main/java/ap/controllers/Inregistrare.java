@@ -135,7 +135,7 @@ public class Inregistrare {
     public void buttonclick() throws JSONException, IOException {
         if(checkNr() && checkNume() && checkAll()) {
             if(verifica()) makeRequest();
-            else System.out.printf("asd");
+            //else System.out.printf("asd");
         }
     }
 }
