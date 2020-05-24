@@ -28,13 +28,13 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Label>
-      <TextField id="username" layoutX="321.0" layoutY="274.0" prefHeight="31.0" prefWidth="481.0" />
-      <Label id="hidden_autentificare" layoutX="320.0" layoutY="175.0" text="Username sau parola gresita !" textFill="RED" visible="false">
+      <TextField fx:id="username" layoutX="321.0" layoutY="274.0" prefHeight="31.0" prefWidth="481.0" />
+      <Label fx:id="hidden_autentificare" layoutX="320.0" layoutY="175.0" text="Username sau parola gresita !" textFill="RED" visible="false">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <PasswordField id="password" layoutX="321.0" layoutY="341.0" prefHeight="31.0" prefWidth="481.0" />
+      <PasswordField fx:id="password" layoutX="321.0" layoutY="341.0" prefHeight="31.0" prefWidth="481.0" />
       <Label layoutX="672.0" layoutY="591.0" text="Nu ai cont ?" />
       <Button id="button_inregistrare" layoutX="792.0" layoutY="586.0" mnemonicParsing="false" onAction="#goInregistrare" text="Inregistrare" />
     </children>

@@ -39,11 +39,11 @@ public class Autentificare {
         }
         reader.close();
     }
-    private void makeRequest() throws IOException {
+    private String makeRequest() throws IOException {
         final String POST_PARAMS = "{\n" +
                 "    \"user\": \"" + username.getText() + "\",\r\n" +
-                "    \"password\": \"" + password.getText() + "\n}";
-        System.out.println(POST_PARAMS);
+                "    \"password\": \"" + password.getText() + "\"\n}";
+        //System.out.println(POST_PARAMS);
         URL url = new URL(API+"/login/");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
@@ -63,21 +63,39 @@ public class Autentificare {
                 response.append(inputLine);
             }
             in.close();
-            System.out.println(response.toString());
+            return response.toString();
         } else {
-            System.out.println(" DIDNT WORK");
+            return "";
         }
     }
     public int verifica() throws IOException, JSONException {
-        //hidden_autentificare.setVisible(false);
-        makeRequest(); return 1;
-        //hidden_autentificare.setVisible(true);
-        //return 0;w
+        hidden_autentificare.setVisible(false);
+        String rs = makeRequest();
+        System.out.printf(rs);
+        int rol;
+        Boolean k;
+        try {
+            JSONObject jsonObject = new JSONObject(rs);
+            if(jsonObject.getBoolean("ok")){
+                if(jsonObject.getString("rol").equals("1")) return 2;
+                else return 1;
+            }
+            else{
+                hidden_autentificare.setVisible(true);
+                return 0;
+            }
+        }catch (JSONException err){
+            hidden_autentificare.setVisible(true);
+            System.out.printf("Error", err.toString());
+        }
+        return 0;
     }
     public void buttonclick(ActionEvent event) throws JSONException, IOException {
-        if(verifica() == 1){
-
+        int aasdadfwd = verifica();
+        if(aasdadfwd == 1){
+            System.out.println("client");
         }
+        if(aasdadfwd==2) System.out.println("admin");
     }
     public void goInregistrare(ActionEvent event) throws IOException{
         Parent home_page_parent = FXMLLoader.load(getClass().getResource("/inregistrare.fxml"));
