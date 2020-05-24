@@ -79,4 +79,40 @@ public class TestPaginaInregistrare extends ApplicationTest{
         clickOn("#b_inregistrare");
         assertTrue(labelnr.isVisible());
     }
+    @Test
+    public void AdresaNuPoateFiDeLungimea0 () {
+        TextField nume = (TextField) GuiTest.find("#nume");
+        TextField nr = (TextField) GuiTest.find("#nr_tel");
+        nr.setText("124134312");
+        nume.setText("Andrei Andrei");
+        TextField t = (TextField) GuiTest.find("#adresa");
+        t.clear();
+        clickOn("#b_inregistrare");
+        Label label = (Label) GuiTest.find("#hidden_all");
+        assertTrue(label.isVisible());
+    }
+    @Test
+    public void UsernameNuPoateFiDeLungimea0 () {
+        TextField nume = (TextField) GuiTest.find("#nume");
+        TextField nr = (TextField) GuiTest.find("#nr_tel");
+        nr.setText("124134312");
+        nume.setText("Andrei Andrei");
+        TextField t = (TextField) GuiTest.find("#username");
+        t.clear();
+        clickOn("#b_inregistrare");
+        Label label = (Label) GuiTest.find("#hidden_all");
+        assertTrue(label.isVisible());
+    }
+    @Test
+    public void ParolaNuPoateFiDeLungimea0 () {
+        TextField nume = (TextField) GuiTest.find("#nume");
+        TextField nr = (TextField) GuiTest.find("#nr_tel");
+        nr.setText("124134312");
+        nume.setText("Andrei Andrei");
+        TextField t = (TextField) GuiTest.find("#password");
+        t.clear();
+        clickOn("#b_inregistrare");
+        Label label = (Label) GuiTest.find("#hidden_all");
+        assertTrue(label.isVisible());
+    }
 }
