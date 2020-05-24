@@ -10,6 +10,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import javafx.event.ActionEvent;
+
+import javax.swing.*;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -37,18 +39,45 @@ public class Autentificare {
         }
         reader.close();
     }
-    public boolean verifica() throws IOException, JSONException {
-        hidden_autentificare.setVisible(false);
-        getRecords(API, "?nume="+username.getText());
-        if(jsonStr.length() < 4 ) return true;
-        else {
-            hidden_autentificare.setVisible(true);
-            return false;
+    private void makeRequest() throws IOException {
+        final String POST_PARAMS = "{\n" +
+                "    \"user\": \"" + username.getText() + "\",\r\n" +
+                "    \"password\": \"" + password.getText() + "\n}";
+        System.out.println(POST_PARAMS);
+        URL url = new URL(API+"/login/");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setDoOutput(true);
+        OutputStream os = conn.getOutputStream();
+        os.write(POST_PARAMS.getBytes());
+        os.flush();
+        os.close();
+        int responseCode = conn.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) { //success
+            BufferedReader in = new BufferedReader(new InputStreamReader(
+                    conn.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+            System.out.println(response.toString());
+        } else {
+            System.out.println(" DIDNT WORK");
         }
-
     }
-    public void buttonclick() throws JSONException, IOException {
+    public int verifica() throws IOException, JSONException {
+        //hidden_autentificare.setVisible(false);
+        makeRequest(); return 1;
+        //hidden_autentificare.setVisible(true);
+        //return 0;w
+    }
+    public void buttonclick(ActionEvent event) throws JSONException, IOException {
+        if(verifica() == 1){
 
+        }
     }
     public void goInregistrare(ActionEvent event) throws IOException{
         Parent home_page_parent = FXMLLoader.load(getClass().getResource("/inregistrare.fxml"));
