@@ -68,4 +68,15 @@ public class TestPaginaInregistrare extends ApplicationTest{
         Label labelnume = (Label) stage1.getScene().lookup("#hidden_nume");
         assertFalse(labelnume.isVisible());
     }
+    @Test
+    public void NumarulDeTelefonPoateSaContinaDoarCifre () {
+        TextField nr = (TextField) GuiTest.find("#nr_tel");
+        nr.setText("12123");
+        clickOn("#b_inregistrare");
+        Label labelnr = (Label) stage1.getScene().lookup("#hidden_nr");
+        assertFalse(labelnr.isVisible());
+        nr.setText("12123asd");
+        clickOn("#b_inregistrare");
+        assertTrue(labelnr.isVisible());
+    }
 }
