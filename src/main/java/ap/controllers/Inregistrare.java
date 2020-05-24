@@ -15,6 +15,7 @@ import java.net.URL;
 import java.sql.*;
 public class Inregistrare {
     @FXML
+    public Button b_inregistrare;
     public TextField nume;
     public TextField nr_tel;
     public TextField username;

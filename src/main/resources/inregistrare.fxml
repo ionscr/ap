@@ -27,7 +27,7 @@
             <Font name="System Bold" size="44.0" />
          </font>
       </Label>
-      <Button layoutX="351.0" layoutY="545.0" mnemonicParsing="false" onAction="#buttonclick" prefHeight="65.0" prefWidth="205.0" text="Inregistrare" />
+      <Button fx:id="b_inregistrare" layoutX="351.0" layoutY="545.0" mnemonicParsing="false" onAction="#buttonclick" prefHeight="65.0" prefWidth="205.0" text="Inregistrare" />
       <Label fx:id="hidden_nume" layoutX="228.0" layoutY="171.0" styleClass="hidden" text="Numele trebuie sa contina minim 3 caractere si poate sa contina doar caractere si spatii !" textFill="RED" underline="true" visible="false">
          <font>
             <Font name="System Bold Italic" size="12.0" />
