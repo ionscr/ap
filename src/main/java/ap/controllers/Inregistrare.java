@@ -126,7 +126,6 @@ public class Inregistrare {
                 response.append(inputLine);
             }
             in.close();
-            // print result
             System.out.println(response.toString());
         } else {
             System.out.println(" DIDNT WORK");
@@ -135,7 +134,6 @@ public class Inregistrare {
     public void buttonclick() throws JSONException, IOException {
         if(checkNr() && checkNume() && checkAll()) {
             if(verifica()) makeRequest();
-            //else System.out.printf("asd");
         }
     }
 }
