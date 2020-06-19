@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="662.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ap.controllers.Inregistrare">
    <stylesheets>
-      <URL value="@style.scss" />
+      <URL value="@style.css" />
    </stylesheets>
    <children>
       <Pane layoutX="214.0" layoutY="445.0">
