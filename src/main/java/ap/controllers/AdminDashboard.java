@@ -5,7 +5,6 @@ import ap.controllers.Services.Articol;
 import ap.controllers.Services.Intrebare;
 import ap.controllers.Services.Liste;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -21,6 +20,8 @@ public class AdminDashboard {
     private AnchorPane anchorRoot;
     @FXML
     private Text totalArticles;
+    @FXML
+    private Text totalNA;
     @FXML
     private Text lastModifiedComponent;
     @FXML
@@ -46,7 +47,7 @@ public class AdminDashboard {
             }
         }
         if (Liste.getintrebareAmount() == 0) {
-            response = API_Handler.getRecords("intrebare", "");
+            response = API_Handler.getRecords("questions", "");
             JSONArray jsonArray = new JSONArray(response.toString());
             int recordAmount = jsonArray.length();
             for (int i = 0; i < recordAmount; i++) {
@@ -55,7 +56,7 @@ public class AdminDashboard {
                         record.getInt("id"),
                         record.getInt("id_user"),
                         record.getString("text"),
-                        record.getBoolean("raspuns")));
+                        record.getString("raspuns")));
             }
         }
     }
@@ -64,7 +65,9 @@ public class AdminDashboard {
     public void initialize() throws IOException {
         int articoleAmount = Liste.getArticlesAmount();
         int intrebariAmount = Liste.getintrebareAmount();
+        int nintrebariAmount = Liste.getNIntrebariAmount();
         totalQA.setText(String.valueOf(intrebariAmount));
         totalArticles.setText(String.valueOf(articoleAmount));
+        totalNA.setText(String.valueOf(nintrebariAmount));
     }
 }

@@ -1,9 +1,11 @@
 package ap.controllers.Services;
+
 import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Liste {
     static ArrayList<Articol> articoleList = new ArrayList<>();
     static ArrayList<Intrebare> intrebareList = new ArrayList<>();
-    static ArrayList<Raspuns> raspunsuriList = new ArrayList<>();
 
 
     public static void push(Articol articol) {
@@ -14,9 +16,6 @@ public class Liste {
         intrebareList.add(intrebare);
     }
 
-    public static void push(Raspuns raspuns) {
-        raspunsuriList.add(raspuns);
-    }
 
     public static int getArticlesAmount() {
         return articoleList.size();
@@ -30,17 +29,17 @@ public class Liste {
         return intrebareList.size();
     }
 
+    public static int getNIntrebariAmount() {
+        int count = 0;
+        for (Intrebare intrebare : intrebareList)
+            if (intrebare.getRaspuns().length() > 0) count++;
+        return count;
+    }
+
     public static Intrebare getIntrebare(int i) {
         return intrebareList.get(i);
     }
 
-    public static int getRaspunsuriAmount() {
-        return raspunsuriList.size();
-    }
-    
-    public static Raspuns getRaspuns(int i) {
-        return raspunsuriList.get(i);
-    }
 
     public static int deleteArticol(int id) {
         for (Articol articol : articoleList) {
@@ -53,7 +52,7 @@ public class Liste {
     }
 
     public static int updateArticol(Articol updatedArticol) {
-        int i=0;
+        int i = 0;
         for (Articol articol : articoleList) {
             if (articol.id == updatedArticol.id) {
                 articoleList.set(i, updatedArticol);

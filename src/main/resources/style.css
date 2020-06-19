@@ -148,7 +148,7 @@ Button {
 
 .descriptionText {
   -fx-font-family: "Gotham Pro Medium";
-  -fx-font-size: 14;
+  -fx-font-size: 20;
 }
 
 .titleText {
@@ -156,13 +156,21 @@ Button {
   -fx-font-size: 30;
 }
 
-.folderIcon {
-  -fx-background-image: url("/assets/home.png");
+.articleIcon {
+  -fx-background-image: url("/assets/article.png");
   -fx-background-repeat: no-repeat;
-  -fx-background-size: cover, auto;
+  -fx-background-size: contain, auto;
+  -fx-min-width: 15px;
+  -fx-min-height: 15px;
 }
 
-
+.QAIcon {
+  -fx-background-image: url("/assets/qa.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: contain, auto;
+  -fx-min-width: 15px;
+  -fx-min-height: 15px;
+}
 #closeBtn{
   -fx-opacity: .5;
   -fx-background-image: url("/assets/home.png");
@@ -181,4 +189,8 @@ Button {
   -fx-background-position: center;
   -fx-background-repeat: no-repeat;
   -fx-background-size: cover;
+}
+.count_nr {
+  -fx-font-family: "Gotham Pro Medium";
+  -fx-font-size: 18;
 }

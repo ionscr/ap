@@ -11,10 +11,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import javafx.event.ActionEvent;
 
-import javax.swing.*;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 import java.io.*;
 import java.net.HttpURLConnection;
