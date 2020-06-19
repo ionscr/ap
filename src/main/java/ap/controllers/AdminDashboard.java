@@ -27,6 +27,8 @@ public class AdminDashboard {
     @FXML
     private Text totalQA;
     @FXML
+    private Text totalUtilizatori;
+    @FXML
     private VBox recentFilesVbox;
     @FXML
     private Pane wrapper;
@@ -66,8 +68,11 @@ public class AdminDashboard {
         int articoleAmount = Liste.getArticlesAmount();
         int intrebariAmount = Liste.getintrebareAmount();
         int nintrebariAmount = Liste.getNIntrebariAmount();
+        StringBuffer userAmount = API_Handler.getRecords("people/count.php","");
         totalQA.setText(String.valueOf(intrebariAmount));
         totalArticles.setText(String.valueOf(articoleAmount));
         totalNA.setText(String.valueOf(nintrebariAmount));
+        totalUtilizatori.setText(userAmount.toString());
+        System.out.println(userAmount.toString());
     }
 }
