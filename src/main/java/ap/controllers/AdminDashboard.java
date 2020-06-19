@@ -1,5 +1,9 @@
 package ap.controllers;
 
+import ap.controllers.Services.API_Handler;
+import ap.controllers.Services.Articol;
+import ap.controllers.Services.Intrebare;
+import ap.controllers.Services.Liste;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -17,115 +21,50 @@ public class AdminDashboard {
     private AnchorPane anchorRoot;
     @FXML
     private Text totalArticles;
-
     @FXML
     private Text lastModifiedComponent;
-
-
     @FXML
     private Text totalQA;
-
     @FXML
     private VBox recentFilesVbox;
     @FXML
     private Pane wrapper;
-
     public StringBuffer response = new StringBuffer();
-    private int recordLimit = 3;
-
-    public HomeController() throws IOException, JSONException {
-        if (ProductsLists.getComponentsAmount() == 0) {
-            response = APIHandler.getRecords("components", "");
+    public AdminDashboard() throws IOException, JSONException {
+        if (Liste.getArticlesAmount() == 0) {
+            response = API_Handler.getRecords("articles", "");
             JSONArray jsonArray = new JSONArray(response.toString());
-
             int recordAmount = jsonArray.length();
             for (int i = 0; i < recordAmount; i++) {
                 JSONObject record = jsonArray.getJSONObject(i);
-                ProductsLists.push(new Component(
+                Liste.push(new Articol(
                         record.getInt("id"),
-                        record.getInt("categoryId"),
-                        record.getString("categoryName"),
-                        record.getString("name"),
-                        record.getInt("amount"),
-                        record.getInt("price"),
-                        record.getBoolean("paid"),
-                        record.getString("date"),
-                        record.getString("image"),
-                        record.getString("provider"),
-                        record.getBoolean("delivered"),
-                        record.getString("comments"),
-                        record.getInt("complaints")));
+                        record.getString("nume"),
+                        record.getString("poza"),
+                        record.getString("descriere"),
+                        record.getBoolean("tip")));
             }
         }
-        if (ProductsLists.getSystemsAmount() == 0) {
-            response = APIHandler.getRecords("systems", "");
+        if (Liste.getintrebareAmount() == 0) {
+            response = API_Handler.getRecords("intrebare", "");
             JSONArray jsonArray = new JSONArray(response.toString());
             int recordAmount = jsonArray.length();
             for (int i = 0; i < recordAmount; i++) {
                 JSONObject record = jsonArray.getJSONObject(i);
-                ProductsLists.push(new Systems(
+                Liste.push(new Intrebare(
                         record.getInt("id"),
-                        record.getInt("categoryId"),
-                        record.getString("categoryName"),
-                        record.getString("name"),
-                        record.getInt("amount"),
-                        record.getInt("price"),
-                        record.getBoolean("paid"),
-                        record.getString("date"),
-                        record.getString("image"),
-                        record.getInt("orders"),
-                        record.getInt("delivers"),
-                        record.getInt("warranty"),
-                        record.getString("categoryParent"),
-                        record.getString("components")));
-            }
-        }
-        if (ProductsLists.getPromotionsAmount() == 0) {
-            response = APIHandler.getRecords("promotions", "");
-            JSONArray jsonArray = new JSONArray(response.toString());
-
-            int recordAmount = jsonArray.length();
-            for (int i = 0; i < recordAmount; i++) {
-                JSONObject record = jsonArray.getJSONObject(i);
-                ProductsLists.push(new Promotion(
-                        record.getInt("id"),
-                        record.getInt("system_id"),
-                        record.getString("category"),
-                        record.getString("name"),
-                        record.getInt("amount"),
-                        record.getString("provider"),
-                        record.getString("image")));
+                        record.getInt("id_user"),
+                        record.getString("text"),
+                        record.getBoolean("raspuns")));
             }
         }
     }
 
     @FXML
     public void initialize() throws IOException {
-        recentFilesVbox.setSpacing(20);
-        RecentItemsController recentItems;
-
-        int componentsAmount = ProductsLists.getComponentsAmount();
-        int systemsAmount = ProductsLists.getSystemsAmount();
-        int latest = componentsAmount - (recordLimit + 1);
-
-        for (int i = 0; i < componentsAmount; i++) {
-
-            if (i > latest) {
-                recentItems = new RecentItemsController(
-                        ProductsLists.getSystems(systemsAmount - 1),
-                        ProductsLists.getComponent(i)
-                );
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/app/home/recentItems/RecentItems.fxml"));
-                loader.setController(recentItems);
-
-                Pane recentPane = loader.load();
-                recentFilesVbox.getChildren().addAll(recentPane);
-            }
-        }
-        totalQA.setText(String.valueOf(componentsAmount));
-        lastModifiedComponent.setText("Ultima modificare: \n" + ProductsLists.getComponent(componentsAmount - 1).date);
-
-        totalArticles.setText(String.valueOf(systemsAmount));
-        lastModifiedSystem.setText("Ultima modificare: \n" + ProductsLists.getSystems(systemsAmount - 1).date);
+        int articoleAmount = Liste.getArticlesAmount();
+        int intrebariAmount = Liste.getintrebareAmount();
+        totalQA.setText(String.valueOf(intrebariAmount));
+        totalArticles.setText(String.valueOf(articoleAmount));
     }
 }

@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class API_Handler {
 
-    private static final String API = "https://tonu.rocks/school/AP/api";
+    private static final String API = "https://tonu.rocks/school/AP/api/";
     public static StringBuffer getRecords(String endpoint, String query) throws IOException {
         StringBuffer getResponse = new StringBuffer();
         URL url = new URL(API + endpoint + query);
