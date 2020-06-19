@@ -41,16 +41,16 @@ Button {
   -fx-background-image: url("/assets/home.png");
 }
 
-.systemsBtn {
-  -fx-background-image: url("/assets/home.png");
+.QABtn {
+  -fx-background-image: url("/assets/qa.png");
 }
 
-.componentsBtn {
-  -fx-background-image: url("/assets/home.png");
+.articlesBtn {
+  -fx-background-image: url("/assets/article.png");
 }
 
-.addProductBtn {
-  -fx-background-image: url("/assets/home.png");
+.addArticolBtn {
+  -fx-background-image: url("/assets/plus.png");
 }
 
 .dialogCard{
@@ -98,13 +98,13 @@ Button {
 
 .deleteBtn {
   -fx-cursor: hand;
-  -fx-background-image: url("/assets/home.png");
+  -fx-background-image: url("/assets/rubbish-can.png");
   -fx-background-repeat: no-repeat;
   -fx-background-size: cover, auto;
 }
 
 .cancel {
-  -fx-background-image: url("/assets/home.png");
+  -fx-background-image: url("/assets/no.png");
   -fx-background-repeat: no-repeat;
   -fx-background-size: cover, auto;
 }
@@ -117,7 +117,7 @@ Button {
 
 .saveBtn {
   -fx-cursor: hand;
-  -fx-background-image: url("/assets/home.png");
+  -fx-background-image: url("/assets/yes.png");
   -fx-background-repeat: no-repeat;
   -fx-background-size: cover, auto;
 }
@@ -145,7 +145,17 @@ Button {
   -fx-scale-x: 1.03;
   -fx-scale-y: 1.03;
 }
+.dashboardCardGreen {
+  -fx-background-color: #00c853;
+  -fx-background-radius: 25;
+}
 
+.dashboardCardGreen:hover {
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, #cef2ca, 50, 0, 0, 1);
+  -fx-scale-x: 1.03;
+  -fx-scale-y: 1.03;
+}
 .descriptionText {
   -fx-font-family: "Gotham Pro Medium";
   -fx-font-size: 20;
@@ -163,7 +173,13 @@ Button {
   -fx-min-width: 15px;
   -fx-min-height: 15px;
 }
-
+.userIcon {
+  -fx-background-image: url("/assets/user.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: contain, auto;
+  -fx-min-width: 15px;
+  -fx-min-height: 15px;
+}
 .QAIcon {
   -fx-background-image: url("/assets/qa.png");
   -fx-background-repeat: no-repeat;
@@ -173,7 +189,7 @@ Button {
 }
 #closeBtn{
   -fx-opacity: .5;
-  -fx-background-image: url("/assets/home.png");
+  -fx-background-image: url("/assets/close.png");
   -fx-background-repeat: no-repeat;
   -fx-background-size: cover;
 }
@@ -193,4 +209,14 @@ Button {
 .count_nr {
   -fx-font-family: "Gotham Pro Medium";
   -fx-font-size: 18;
+}
+
+.searchBar {
+  -fx-background-color: #FFA000;
+  -fx-opacity: 0.47;
+  -fx-padding: 0px 0px 0px 40px;
+  -fx-background-radius: 9;
+  -fx-background-image: url("assets/search.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: 13px 15px;
 }

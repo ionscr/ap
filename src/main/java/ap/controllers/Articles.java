@@ -73,7 +73,7 @@ public class Articles {
 
             if (filter.equals("none")
                     || filter.equals(typeName)
-                    || typeName.toLowerCase().contains(filter.toLowerCase())) {
+                    || articol.nume.toLowerCase().contains(filter.toLowerCase())) {
 
                 appendTemplate(new ArticolCard(articol, this), layoutX, layoutY);
                 layoutY += (occurrences + 1) % 3 != 0 ? 0 : 270;

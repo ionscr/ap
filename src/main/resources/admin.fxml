@@ -24,13 +24,13 @@
                         </Button>
                         <Button alignment="CENTER" contentDisplay="CENTER" layoutY="106.0" mnemonicParsing="false"
                                 onMouseClicked="#loadQAScene" prefHeight="34.0" prefWidth="67.0"
-                                styleClass="systemsBtn"/>
+                                styleClass="QABtn"/>
                         <Button alignment="CENTER" contentDisplay="CENTER" layoutY="175.0" mnemonicParsing="false"
                                 onMouseClicked="#loadArticlesScene" prefHeight="35.0" prefWidth="67.0"
-                                styleClass="componentsBtn"/>
+                                styleClass="articlesBtn"/>
                         <Button alignment="CENTER" cache="true" contentDisplay="CENTER" layoutY="636.0"
                                 mnemonicParsing="false" onMouseClicked="#loadAddArticleScene" prefHeight="35.0"
-                                prefWidth="67.0" styleClass="addProductBtn"/>
+                                prefWidth="67.0" styleClass="addArticolBtn"/>
                     </children>
                 </Pane>
             </children>

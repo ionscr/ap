@@ -57,6 +57,21 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Pane>
+                <Pane layoutX="55.0" layoutY="469.0" prefHeight="187.0" prefWidth="220.0" styleClass="dashboardCardGreen">
+                    <children>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="descriptionText" text="Nr. de clienti" />
+                        <Pane layoutX="14.0" layoutY="113.0" prefHeight="25.0" prefWidth="25.0" styleClass="userIcon" />
+                        <Text fx:id="totalUtilizatori" fill="WHITE" layoutX="59.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="count_nr" text="count">
+                            <font>
+                                <Font name="Open Sans" size="12.0" />
+                            </font>
+                        </Text>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Pane>
+            <Separator layoutX="55.0" layoutY="402.0" prefHeight="3.0" prefWidth="798.0" />
             </children>
         </Pane>
     </children>

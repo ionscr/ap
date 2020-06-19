@@ -56,12 +56,6 @@ public class ArticolDialog extends Articol {
 
     private void setDisabled(Boolean isDisabled) {
         nameInput.setDisable(isDisabled);
-        categoryCombo.setDisable(isDisabled);
-        providerInput.setDisable(isDisabled);
-        amountInput.setDisable(isDisabled);
-        priceInput.setDisable(isDisabled);
-        deliveredCheckbox.setDisable(isDisabled);
-        paidCheckbox.setDisable(isDisabled);
         commentsInput.setDisable(isDisabled);
         saveBtn.setVisible(!isDisabled);
         cancelBtn.setVisible(!isDisabled);
@@ -87,9 +81,9 @@ public class ArticolDialog extends Articol {
             final String UPDATE_PARAMS = "{\n" +
                     "    \"id\": " + id + ",\r\n" +
                     "    \"nume\": \"" + updatedArticol.nume + "\",\r\n" +
-                    "    \"comments\": \"" + updatedArticol.descriere + "\"\n}";
+                    "    \"descriere\": \"" + updatedArticol.descriere + "\"\n}";
             try {
-                API_Handler.makeRequest("UPDATE", "components", UPDATE_PARAMS);
+                API_Handler.makeRequest("UPDATE", "articles", UPDATE_PARAMS);
                 if (Liste.updateArticol(updatedArticol) != 0) {
                     articlesController.renderAll();
                 } else {
@@ -109,7 +103,7 @@ public class ArticolDialog extends Articol {
                 String DELETEPARAM = "{\n" +
                         "\"id\": " + id + ",\r\n" +
                         "\"nume\": \"" + nume + "\"\n}";
-                API_Handler.makeRequest("DELETE", "components", DELETEPARAM);
+                API_Handler.makeRequest("DELETE", "articles", DELETEPARAM);
 
                 try {
                     if (Liste.deleteArticol(id) != 0) {
