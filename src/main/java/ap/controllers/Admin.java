@@ -18,7 +18,7 @@ public class Admin {
     // handler to load addProduct scene on button click action
     @FXML
     void loadAddArticleScene(MouseEvent event) {
-        loadPage("/addArticle.fxml", event);
+        loadPage("/add_article.fxml", event);
     }
 
     // handler to load components scene on button click action

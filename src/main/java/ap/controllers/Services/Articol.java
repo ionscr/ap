@@ -14,5 +14,11 @@ public class Articol {
         this.descriere = descriere;
         this.tip = tip;
     }
-
+    public Articol(Articol articol) {
+        this.id = articol.id;
+        this.nume = articol.nume;
+        this.poza = articol.poza;
+        this.descriere = articol.descriere;
+        this.tip = articol.tip;
+    }
 }
