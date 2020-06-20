@@ -32,7 +32,7 @@ public class Liste {
     public static int getNIntrebariAmount() {
         int count = 0;
         for (Intrebare intrebare : intrebareList)
-            if (intrebare.getRaspuns().length() > 0) count++;
+            if (intrebare.getRaspuns().length() == 0) count++;
         return count;
     }
 
