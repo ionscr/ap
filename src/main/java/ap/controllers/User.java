@@ -15,59 +15,44 @@ public class User {
     @FXML
     private BorderPane borderPane;
 
-    // handler to load addProduct scene on button click action
     @FXML
-    void loadAddArticleScene(MouseEvent event) {
-        loadPage("/add_article.fxml", event);
+    void loadAddQuestionScene(MouseEvent event) {
+        loadPage("/add_question.fxml", event);
     }
 
-    // handler to load components scene on button click action
     @FXML
     void loadArticlesScene(MouseEvent event) {
-        loadPage("/articles.fxml", event);
+        loadPage("/articles_user.fxml", event);
     }
 
-    // handler to load systems scene on button click action
     @FXML
     void loadQAScene(MouseEvent event) {
-        loadPage("/qa.fxml", event);
-    }
-
-    // handler to load home scene on button click action
-    @FXML
-    void loadHomeScene(MouseEvent event) {
-        loadPage("/admin_dashboard.fxml", event);
+        loadPage("/qa_user.fxml", event);
     }
 
     @FXML
     void initialize() {
-        // load home scene by default
         Parent rootNode = null;
         try {
-            rootNode = FXMLLoader.load(getClass().getResource("/admin_dashboard.fxml"));
+            rootNode = FXMLLoader.load(getClass().getResource("/articles_user.fxml"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
         borderPane.setCenter(rootNode);
     }
 
-    // utility to switch active tabs
     void loadPage(String scene, MouseEvent event) {
 
-        // remove active class from other navigation buttons
         for (Node btn : navBar.getChildren()) {
             btn.getStyleClass().remove("active");
         }
 
-        // add active class to opened tab
         ((Node) event.getSource()).getStyleClass().add("active");
 
-        // load required scene
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource(scene));
         } catch (IOException ex) {
-            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }
         borderPane.setCenter(root);
     }

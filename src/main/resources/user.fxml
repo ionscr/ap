@@ -22,8 +22,8 @@
                                 onMouseClicked="#loadQAScene" prefHeight="34.0" prefWidth="67.0"
                                 styleClass="QABtn"/>
                         <Button alignment="CENTER" cache="true" contentDisplay="CENTER" layoutY="636.0"
-                                mnemonicParsing="false" onMouseClicked="#loadAddArticleScene" prefHeight="35.0"
-                                prefWidth="67.0" styleClass="addIntrebareBtn"/>
+                                mnemonicParsing="false" onMouseClicked="#loadAddQuestionScene" prefHeight="35.0"
+                                prefWidth="67.0" styleClass="addArticolBtn"/>
                     </children>
                 </Pane>
             </children>
