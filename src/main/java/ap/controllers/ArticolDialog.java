@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import ap.controllers.Services.API_Handler;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -78,12 +79,18 @@ public class ArticolDialog extends Articol {
             setDisabled(true);
             updatedArticol.nume = nameInput.getText();
             updatedArticol.descriere = commentsInput.getText();
-            final String UPDATE_PARAMS = "{\n" +
-                    "    \"id\": " + id + ",\r\n" +
-                    "    \"nume\": \"" + updatedArticol.nume + "\",\r\n" +
-                    "    \"descriere\": \"" + updatedArticol.descriere + "\"\n}";
+            JSONObject jsonObject = new JSONObject();
             try {
-                API_Handler.makeRequest("UPDATE", "articles", UPDATE_PARAMS);
+                jsonObject.put("id", id);
+                jsonObject.put("nume", updatedArticol.nume);
+                jsonObject.put("descriere", updatedArticol.descriere);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            String payload = jsonObject.toString();
+            System.out.println(payload);
+            try {
+                API_Handler.makeRequest("UPDATE", "articles", jsonObject.toString());
                 if (Liste.updateArticol(updatedArticol) != 0) {
                     articlesController.renderAll();
                 } else {
