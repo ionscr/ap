@@ -76,10 +76,13 @@ public class Inregistrare {
             return false;
         }
     }
+    public boolean isValidNr(String nr){
+        return nr.matches("[0-9]+");
+    }
     public boolean checkNr() {
         hidden_nr.setVisible(false);
         nr_tel.getStyleClass().remove("red-border");
-        if (nr_tel.getText().matches("[0-9]+")) return true;
+        if (isValidNr(nr_tel.getText())) return true;
         else {
             hidden_nr.setVisible(true);
             nr_tel.getStyleClass().add("red-border");
