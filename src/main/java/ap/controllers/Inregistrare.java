@@ -63,10 +63,13 @@ public class Inregistrare {
     }
     public Inregistrare() throws IOException {
     }
+    public boolean isValidName(String nume){
+        return nume.matches("^[A-Za-z ]{3,30}$");
+    }
     public boolean checkNume() {
         hidden_nume.setVisible(false);
         nume.getStyleClass().remove("red-border");
-        if (nume.getText().matches("^[A-Za-z ]{3,30}$")) return true;
+        if (isValidName(nume.getText())) return true;
         else {
             hidden_nume.setVisible(true);
             nume.getStyleClass().add("red-border");
