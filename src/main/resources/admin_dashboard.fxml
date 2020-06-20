@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorRoot" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ap.controllers.AdminDashboard">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <children>
+        <Pane fx:id="wrapper" prefHeight="714.0" prefWidth="908.0" style="-fx-background-color: white;">
+            <children>
+                <Pane layoutX="55.0" layoutY="150.0" prefHeight="187.0" prefWidth="220.0" styleClass="dashboardCardBlue">
+                    <children>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="descriptionText" text="Articole" />
+                        <Pane layoutX="14.0" layoutY="113.0" prefHeight="25.0" prefWidth="25.0" styleClass="articleIcon" />
+                        <Text fx:id="totalArticles" fill="WHITE" layoutX="59.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="count_nr" text="count">
+                            <font>
+                                <Font name="Open Sans" size="12.0" />
+                            </font>
+                        </Text>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Pane>
+                <Text layoutX="73.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ttt" text="Dashboard">
+                    <font>
+                        <Font name="Open Sans Semibold" size="36.0" />
+                    </font>
+                </Text>
+                <Pane layoutX="361.0" layoutY="150.0" prefHeight="187.0" prefWidth="220.0">
+                    <styleClass>
+                        <String fx:value="dashboardCardRed" />
+                        <String fx:value="btn" />
+                    </styleClass>
+                    <children>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="descriptionText" text="Intrebari" />
+                        <Pane layoutX="14.0" layoutY="112.0" prefHeight="25.0" prefWidth="25.0" styleClass="QAIcon" />
+                        <Text fx:id="totalQA" fill="WHITE" layoutX="51.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="count_nr" text="count">
+                            <font>
+                                <Font name="Open Sans" size="12.0" />
+                            </font>
+                        </Text>
+                  <Text fx:id="totalNA" fill="WHITE" layoutX="162.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="count_nr" text="count">
+                     <font>
+                        <Font name="Open Sans" size="12.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="14.0" layoutY="139.0" styleClass="count_nr" text="Necesita raspuns : " textFill="WHITE" />
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Pane>
+                <Pane layoutX="55.0" layoutY="469.0" prefHeight="187.0" prefWidth="220.0" styleClass="dashboardCardGreen">
+                    <children>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="descriptionText" text="Nr. de clienti" />
+                        <Pane layoutX="14.0" layoutY="113.0" prefHeight="25.0" prefWidth="25.0" styleClass="userIcon" />
+                        <Text fx:id="totalUtilizatori" fill="WHITE" layoutX="59.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="count_nr" text="count">
+                            <font>
+                                <Font name="Open Sans" size="12.0" />
+                            </font>
+                        </Text>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Pane>
+            <Separator layoutX="55.0" layoutY="402.0" prefHeight="3.0" prefWidth="798.0" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

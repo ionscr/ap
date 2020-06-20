@@ -11,10 +11,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import javafx.event.ActionEvent;
 
-import javax.swing.*;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -91,11 +87,19 @@ public class Autentificare {
         return 0;
     }
     public void buttonclick(ActionEvent event) throws JSONException, IOException {
-        int aasdadfwd = verifica();
-        if(aasdadfwd == 1){
+        int auth = verifica();
+        if(auth == 1){
             System.out.println("client");
         }
-        if(aasdadfwd==2) System.out.println("admin");
+        if(auth == 2) {
+            Parent home_page_parent = FXMLLoader.load(getClass().getResource("/admin.fxml"));
+            Scene home_page_scene = new Scene(home_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide(); //optional
+            app_stage.setScene(home_page_scene);
+            app_stage.setTitle("Pagina de administrare");
+            app_stage.show();
+        }
     }
     public void goInregistrare(ActionEvent event) throws IOException{
         Parent home_page_parent = FXMLLoader.load(getClass().getResource("/inregistrare.fxml"));

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ap.controllers.AddArticle">
+    <children>
+        <Pane prefHeight="700.0" prefWidth="957.0" visible="false">
+            <children>
+                <Group layoutX="572.0" layoutY="23.0">
+                    <children>
+                        <TextField prefHeight="46.0" prefWidth="264.0" style="-fx-background-color: #FFA000; -fx-background-radius: 8; -fx-opacity: 0.47; -fx-alignment: center;" />
+                    </children>
+                </Group>
+            </children>
+        </Pane>
+        <VBox layoutX="263.0" layoutY="134.0" prefHeight="360.0" prefWidth="439.0" style="-fx-spacing: 20;">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Label alignment="CENTER" text="Adauga articol" textFill="#636363">
+                            <font>
+                                <Font name="Arial Black" size="25.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <VBox prefHeight="321.0" prefWidth="439.0" style="-fx-spacing: 10;">
+                    <children>
+                        <HBox fx:id="productCategory" style="-fx-spacing: 10;">
+                            <children>
+                                <Label prefWidth="100.0" text="Tip articol" textFill="#404040">
+                                    <font>
+                                        <Font name="Arial Black" size="15.0" />
+                                    </font>
+                                </Label>
+                                <RadioButton mnemonicParsing="false" selected="false" text="Plan" textFill="#bebebe">
+                                    <font>
+                                        <Font name="Arial" size="15.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="ArticleGroup" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="isAntrenament" mnemonicParsing="false" selected="true" text="Antrenament" textFill="#bebebe" toggleGroup="$ArticleGroup">
+                                    <font>
+                                        <Font name="Arial" size="15.0" />
+                                    </font>
+                                </RadioButton>
+                            </children>
+                        </HBox>
+                        <HBox style="-fx-spacing: 10;">
+                            <children>
+                                <Label prefWidth="100.0" text="Denumire" textFill="#404040">
+                                    <font>
+                                        <Font name="Arial Black" size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextField id="denumire" fx:id="nameInput" prefHeight="26.0" prefWidth="264.0" style="-fx-border-color: #0083FD; -fx-background-color: transparent; -fx-border-radius: 1;">
+                                    <opaqueInsets>
+                                        <Insets bottom="12.0" right="1.0" />
+                                    </opaqueInsets>
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="descriptionInputHBOX" prefHeight="203.0" prefWidth="439.0" style="-fx-spacing: 10;">
+                            <children>
+                                <Label fx:id="descritionInputText" prefWidth="100.0" text="Descriere" textFill="#404040">
+                                    <font>
+                                        <Font name="Arial Black" size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextArea fx:id="descriptionInput" prefHeight="126.0" prefWidth="271.0" scrollLeft="5.0" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" />
+            </children>
+        </VBox>
+            <Button fx:id="addBtn" layoutX="399.0" layoutY="494.0" mnemonicParsing="false" onAction="#addNewArticle" prefHeight="42.0" prefWidth="160.0" style="-fx-background-radius: 13; -fx-background-color: #0083FD;" styleClass="adauga" stylesheets="@style.css" text="adauga" textFill="WHITE">
+                <font>
+                    <Font name="Arial Black" size="15.0" />
+                </font>
+            </Button>
+    </children>
+</Pane>

@@ -1,0 +1,232 @@
+.red-border{
+  -fx-border-color: red;
+}
+.sideNav {
+  -fx-background-color: #121432;
+}
+
+.btn,
+Button {
+  -fx-cursor: hand;
+}
+
+.sideNav Button {
+  -fx-background-color: transparent;
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}
+
+.sideNav Button:hover,
+.sideNav Button.active {
+  -fx-background-color: transparent;
+  -fx-border-style: hidden hidden hidden solid;
+  -fx-border-color: white;
+  -fx-border-width: 2px;
+}
+
+.sidebar {
+  -fx-background-color: #121432;
+}
+
+.accent {
+  -fx-background-color: #FFA000;
+}
+
+.viewActiveTab Button {
+  -fx-background-color: #474646;
+  -fx-cursor: initial;
+}
+
+.homeBtn {
+  -fx-background-image: url("/assets/home.png");
+}
+
+.QABtn {
+  -fx-background-image: url("/assets/qa.png");
+}
+
+.articlesBtn {
+  -fx-background-image: url("/assets/article.png");
+}
+
+.addArticolBtn {
+  -fx-background-image: url("/assets/plus.png");
+}
+
+.dialogCard{
+  -fx-background-color: white;
+  -fx-background-insets: 5;
+  -fx-background-radius: 5;
+  -fx-effect: dropshadow(three-pass-box, #cccccc, 10, 0, 0, 0);
+}
+
+.cardTemplate {
+  -fx-background-color: white;
+  -fx-effect: dropshadow(gaussian, rgba(8, 88, 207, 0.08), 7, 0, 0, 5);
+  -fx-background-radius: 15;
+}
+
+.QAcardTemplate:hover {
+  -fx-scale-x: 1.03;
+  -fx-scale-y: 1.03;
+}
+.QAcardTemplate {
+  -fx-end-margin: 30px;
+  -fx-background-color: white;
+  -fx-effect: dropshadow(gaussian, rgba(8, 88, 207, 0.08), 7, 0, 0, 5);
+  -fx-background-radius: 15;
+}
+
+.cardTemplate:hover {
+  -fx-scale-x: 1.03;
+  -fx-scale-y: 1.03;
+}
+.combo-box {
+  -fx-background-color: transparent;
+  -fx-border-color: #9599A1;
+  -fx-mark-color: #9599A1;
+  -fx-border-radius: 10;
+}
+
+.updateBtn {
+  -fx-background-color: #FF985B;
+  -fx-background-radius: 5;
+  -fx-font-family: "Gotham Pro Black";
+  -fx-font-size: 14;
+  -fx-text-fill: white;
+}
+
+.updateBtn:hover {
+  fx-background-color: #FF985B;
+  -fx-background-radius: 5;
+  -fx-font-family: "Gotham Pro Black";
+  -fx-font-size: 14;
+  -fx-text-fill: white;
+  -fx-scale-x: 1.03;
+  -fx-scale-y: 1.03;
+}
+
+.deleteBtn {
+  -fx-cursor: hand;
+  -fx-background-image: url("/assets/rubbish-can.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: cover, auto;
+}
+
+.cancel {
+  -fx-background-image: url("/assets/no.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: cover, auto;
+}
+
+.editText {
+  -fx-border-color: transparent;
+  -fx-border-style: none;
+  -fx-background-color: transparent;
+}
+
+.saveBtn {
+  -fx-cursor: hand;
+  -fx-background-image: url("/assets/yes.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: cover, auto;
+}
+
+.dashboardCardBlue {
+  -fx-background-color: #6672FB;
+  -fx-background-radius: 25;
+}
+
+.dashboardCardBlue:hover {
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, #C7C9EB, 50, 0, 0, 1);
+  -fx-scale-x: 1.03;
+  -fx-scale-y: 1.03;
+}
+
+.dashboardCardRed {
+  -fx-background-color: #E8523F;
+  -fx-background-radius: 25;
+}
+
+.dashboardCardRed:hover {
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, #F2D0CA, 50, 0, 0, 1);
+  -fx-scale-x: 1.03;
+  -fx-scale-y: 1.03;
+}
+.dashboardCardGreen {
+  -fx-background-color: #00c853;
+  -fx-background-radius: 25;
+}
+
+.dashboardCardGreen:hover {
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, #cef2ca, 50, 0, 0, 1);
+  -fx-scale-x: 1.03;
+  -fx-scale-y: 1.03;
+}
+.descriptionText {
+  -fx-font-family: "Gotham Pro Medium";
+  -fx-font-size: 20;
+}
+
+.titleText {
+  -fx-font-family: "Gotham Pro Black";
+  -fx-font-size: 30;
+}
+
+.articleIcon {
+  -fx-background-image: url("/assets/article.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: contain, auto;
+  -fx-min-width: 15px;
+  -fx-min-height: 15px;
+}
+.userIcon {
+  -fx-background-image: url("/assets/user.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: contain, auto;
+  -fx-min-width: 15px;
+  -fx-min-height: 15px;
+}
+.QAIcon {
+  -fx-background-image: url("/assets/qa.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: contain, auto;
+  -fx-min-width: 15px;
+  -fx-min-height: 15px;
+}
+#closeBtn{
+  -fx-opacity: .5;
+  -fx-background-image: url("/assets/close.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: cover;
+}
+
+#imagePane {
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: cover;
+}
+
+
+#imageHolder {
+  -fx-background-radius: 15;
+  -fx-background-position: center;
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: cover;
+}
+.count_nr {
+  -fx-font-family: "Gotham Pro Medium";
+  -fx-font-size: 18;
+}
+
+.searchBar {
+  -fx-background-color: #FFA000;
+  -fx-opacity: 0.47;
+  -fx-padding: 0px 0px 0px 40px;
+  -fx-background-radius: 9;
+  -fx-background-image: url("assets/search.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: 13px 15px;
+}
