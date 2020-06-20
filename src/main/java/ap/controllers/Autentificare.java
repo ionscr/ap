@@ -89,7 +89,13 @@ public class Autentificare {
     public void buttonclick(ActionEvent event) throws JSONException, IOException {
         int auth = verifica();
         if(auth == 1){
-            System.out.println("client");
+            Parent home_page_parent = FXMLLoader.load(getClass().getResource("/user.fxml"));
+            Scene home_page_scene = new Scene(home_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide(); //optional
+            app_stage.setScene(home_page_scene);
+            app_stage.setTitle("Pagina utilizatorului");
+            app_stage.show();
         }
         if(auth == 2) {
             Parent home_page_parent = FXMLLoader.load(getClass().getResource("/admin.fxml"));

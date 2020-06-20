@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-public class Admin {
+public class User {
     public Pane navBar;
     @FXML
     private BorderPane borderPane;
@@ -37,15 +37,15 @@ public class Admin {
     @FXML
     void loadHomeScene(MouseEvent event) {
         loadPage("/admin_dashboard.fxml", event);
-        }
+    }
 
-        @FXML
-        void initialize() {
-            // load home scene by default
-            Parent rootNode = null;
-            try {
-                rootNode = FXMLLoader.load(getClass().getResource("/admin_dashboard.fxml"));
-            } catch (IOException ex) {
+    @FXML
+    void initialize() {
+        // load home scene by default
+        Parent rootNode = null;
+        try {
+            rootNode = FXMLLoader.load(getClass().getResource("/admin_dashboard.fxml"));
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         borderPane.setCenter(rootNode);
