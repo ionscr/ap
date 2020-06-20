@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
-public class ArticolCard extends Articol{
+public class ArticolCardUser extends Articol{
     @FXML
     private Pane paneContainer;
 
@@ -19,10 +19,10 @@ public class ArticolCard extends Articol{
 
     @FXML
     private Text articleName;
-    
+
     Articol articol = null;
-    Articles articlesController = null;
-    public ArticolCard(Articol articol, Articles articlesController) {
+    ArticlesUser articlesController = null;
+    public ArticolCardUser(Articol articol, ArticlesUser articlesController) {
         super(articol);
         this.articol = articol;
         this.articlesController = articlesController;
@@ -33,10 +33,10 @@ public class ArticolCard extends Articol{
         articleName.setText(nume);
         imagePane.setStyle(String.format("-fx-background-image: url(%s);", poza));
         paneContainer.setOnMouseClicked(mouseEvent -> {
-            ArticolDialog articolDialogController =
-                    new ArticolDialog(articol, articlesController);
+            ArticolDialogUser articolDialogController =
+                    new ArticolDialogUser(articol, articlesController);
             FXMLLoader loader =
-                    new FXMLLoader(getClass().getResource("/articol_dialog.fxml"));
+                    new FXMLLoader(getClass().getResource("/articol_dialog_user.fxml"));
             loader.setController(articolDialogController);
             DialogHelper.loadDialog(mouseEvent, loader);
         });

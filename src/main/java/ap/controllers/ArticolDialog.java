@@ -26,25 +26,11 @@ public class ArticolDialog extends Articol {
     @FXML
     private Pane cancelBtn;
     @FXML
-    private ComboBox<?> categoryCombo;
-    @FXML
-    private TextField providerInput;
-    @FXML
-    private TextField amountInput;
-    @FXML
     private TextField nameInput;
     @FXML
     private Pane imageHolder;
     @FXML
-    private ComboBox<?> componentsCombo;
-    @FXML
     private Pane closeBtn;
-    @FXML
-    private CheckBox deliveredCheckbox;
-    @FXML
-    private CheckBox paidCheckbox;
-    @FXML
-    private TextField priceInput;
     @FXML
     private TextArea commentsInput;
     Articol updatedArticol = null;
@@ -69,12 +55,10 @@ public class ArticolDialog extends Articol {
         imageHolder.setStyle(String.format("-fx-background-image: url(%s);", poza));
         setDisabled(true);
 
-        //modifica
         updateBtn.setOnMouseClicked(mouseEvent -> {
             setDisabled(false);
         });
 
-        //save changes
         saveBtn.setOnMouseClicked(mouseEvent -> {
             setDisabled(true);
             updatedArticol.nume = nameInput.getText();
@@ -100,11 +84,9 @@ public class ArticolDialog extends Articol {
                 e.printStackTrace();
             }
         });
-        //cancel btn
         cancelBtn.setOnMouseClicked(mouseEvent -> {
             setDisabled(true);
         });
-        //delete btn
         deleteBtn.setOnMouseClicked(mouseEvent -> {
             try {
                 String DELETEPARAM = "{\n" +
@@ -125,12 +107,10 @@ public class ArticolDialog extends Articol {
                 ex.printStackTrace();
             }
             Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            // do what you have to do
             stage.close();
         });
         closeBtn.setOnMouseClicked(mouseEvent -> {
             Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            // do what you have to do
             stage.close();
         });
 

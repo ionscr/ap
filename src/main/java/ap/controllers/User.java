@@ -10,37 +10,32 @@ import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-public class Admin {
+public class User {
     public Pane navBar;
     @FXML
     private BorderPane borderPane;
 
     @FXML
-    void loadAddArticleScene(MouseEvent event) {
-        loadPage("/add_article.fxml", event);
+    void loadAddQuestionScene(MouseEvent event) {
+        loadPage("/add_question.fxml", event);
     }
 
     @FXML
     void loadArticlesScene(MouseEvent event) {
-        loadPage("/articles.fxml", event);
+        loadPage("/articles_user.fxml", event);
     }
 
     @FXML
     void loadQAScene(MouseEvent event) {
-        loadPage("/qa.fxml", event);
+        loadPage("/qa_user.fxml", event);
     }
 
     @FXML
-    void loadHomeScene(MouseEvent event) {
-        loadPage("/admin_dashboard.fxml", event);
-        }
-
-        @FXML
-        void initialize() {
-            Parent rootNode = null;
-            try {
-                rootNode = FXMLLoader.load(getClass().getResource("/admin_dashboard.fxml"));
-            } catch (IOException ex) {
+    void initialize() {
+        Parent rootNode = null;
+        try {
+            rootNode = FXMLLoader.load(getClass().getResource("/articles_user.fxml"));
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         borderPane.setCenter(rootNode);

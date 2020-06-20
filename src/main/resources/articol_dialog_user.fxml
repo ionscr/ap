@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <children>
+        <BorderPane style="-fx-background-color: transparent;">
+            <center>
+                <AnchorPane fx:id="rootPane" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Pane styleClass="dialogCard">
+                            <children>
+                                <Pane layoutX="-7.0" layoutY="-14.0" prefHeight="600.0" prefWidth="1000.0">
+                                    <children>
+                                        <Label layoutX="283.0" layoutY="84.0" prefHeight="20.0" prefWidth="106.0" styleClass="descriptionText" text="Descriere" textFill="#b7b7b7" />
+                                        <TextArea fx:id="commentsInput" editable="false" layoutX="283.0" layoutY="128.0" prefHeight="460.0" prefWidth="704.0" wrapText="true" />
+
+                                        <Pane fx:id="imageHolder" layoutX="21.0" layoutY="99.0" prefHeight="220.0" prefWidth="235.0" />
+
+                                        <Pane fx:id="closeBtn" layoutX="966.0" layoutY="34.0" prefHeight="20.0" prefWidth="20.0" styleClass="closeBtn" />
+                              <Label fx:id="nameInput" layoutX="37.0" layoutY="34.0" text="Label">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </Pane>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </AnchorPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

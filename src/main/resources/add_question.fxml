@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ap.controllers.AddQuestion">
+    <children>
+        <Pane prefHeight="700.0" prefWidth="957.0" visible="false">
+            <children>
+                <Group layoutX="572.0" layoutY="23.0">
+                    <children>
+                        <TextField prefHeight="46.0" prefWidth="264.0" style="-fx-background-color: #FFA000; -fx-background-radius: 8; -fx-opacity: 0.47; -fx-alignment: center;" />
+                    </children>
+                </Group>
+            </children>
+        </Pane>
+        <VBox layoutX="35.0" layoutY="75.0" prefHeight="373.0" prefWidth="886.0" style="-fx-spacing: 20;">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Label alignment="CENTER" text="Adauga intrebare" textFill="#636363">
+                            <font>
+                                <Font name="Arial Black" size="25.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <VBox prefHeight="324.0" prefWidth="886.0" style="-fx-spacing: 10;">
+                    <children>
+                        <HBox fx:id="descriptionInputHBOX" prefHeight="274.0" prefWidth="886.0" style="-fx-spacing: 10;">
+                            <children>
+                                <Label fx:id="descritionInputText" prefWidth="100.0" text="Intrebare" textFill="#404040">
+                                    <font>
+                                        <Font name="Arial Black" size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextArea fx:id="descriptionInput" prefHeight="270.0" prefWidth="763.0" scrollLeft="5.0" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" />
+            </children>
+        </VBox>
+        <Button fx:id="addBtn" layoutX="398.0" layoutY="448.0" mnemonicParsing="false" onAction="#addNewQuestion" prefHeight="42.0" prefWidth="160.0" style="-fx-background-radius: 13; -fx-background-color: #0083FD;" styleClass="adauga" stylesheets="@style.css" text="adauga" textFill="WHITE">
+            <font>
+                <Font name="Arial Black" size="15.0" />
+            </font>
+        </Button>
+    </children>
+</Pane>
