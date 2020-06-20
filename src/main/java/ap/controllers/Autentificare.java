@@ -65,28 +65,38 @@ public class Autentificare {
             return "";
         }
     }
+    public boolean checkNume(String nume){
+        if(nume.length()==0) return false;
+        return true;
+    }
+    public boolean checkPassword(String pass){
+        if(pass.length()==0) return false;
+        return true;
+    }
     public int verifica() throws IOException, JSONException {
         hidden_autentificare.setVisible(false);
-        String rs = makeRequest();
-        System.out.printf(rs);
-        int rol;
-        Boolean k;
-        try {
-            JSONObject jsonObject = new JSONObject(rs);
-            if(jsonObject.getBoolean("ok")){
-                Utilizator.id = jsonObject.getInt("id");
-                Utilizator.nume = jsonObject.getString("nume");
-                if(jsonObject.getString("rol").equals("1")) return 2;
-                else return 1;
-            }
-            else{
+        if(checkNume(username.getText()) && checkPassword(password.getText())) {
+            String rs = makeRequest();
+            System.out.printf(rs);
+            int rol;
+            Boolean k;
+            try {
+                JSONObject jsonObject = new JSONObject(rs);
+                if (jsonObject.getBoolean("ok")) {
+                    Utilizator.id = jsonObject.getInt("id");
+                    Utilizator.nume = jsonObject.getString("nume");
+                    if (jsonObject.getString("rol").equals("1")) return 2;
+                    else return 1;
+                } else {
+                    hidden_autentificare.setVisible(true);
+                    return 0;
+                }
+            } catch (JSONException err) {
                 hidden_autentificare.setVisible(true);
-                return 0;
+                System.out.printf("Error", err.toString());
             }
-        }catch (JSONException err){
-            hidden_autentificare.setVisible(true);
-            System.out.printf("Error", err.toString());
         }
+        hidden_autentificare.setVisible(true);
         return 0;
     }
     public void buttonclick(ActionEvent event) throws JSONException, IOException {
