@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import java.util.Set;
+
 public class ArticolCard extends Articol{
     @FXML
     private Pane paneContainer;
@@ -18,7 +18,7 @@ public class ArticolCard extends Articol{
     private Pane textPane;
 
     @FXML
-    private Text productName;
+    private Text articleName;
     
     Articol articol = null;
     Articles articlesController = null;
@@ -30,7 +30,7 @@ public class ArticolCard extends Articol{
 
     @FXML
     public Pane initialize() {
-        productName.setText(nume);
+        articleName.setText(nume);
         imagePane.setStyle(String.format("-fx-background-image: url(%s);", poza));
         paneContainer.setOnMouseClicked(mouseEvent -> {
             ArticolDialog articolDialogController =

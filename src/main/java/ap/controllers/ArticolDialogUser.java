@@ -41,7 +41,6 @@ public class ArticolDialogUser extends Articol {
         imageHolder.setStyle(String.format("-fx-background-image: url(%s);", poza));
         closeBtn.setOnMouseClicked(mouseEvent -> {
             Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            // do what you have to do
             stage.close();
         });
 

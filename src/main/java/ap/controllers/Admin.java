@@ -37,7 +37,6 @@ public class Admin {
 
         @FXML
         void initialize() {
-            // load home scene by default
             Parent rootNode = null;
             try {
                 rootNode = FXMLLoader.load(getClass().getResource("/admin_dashboard.fxml"));

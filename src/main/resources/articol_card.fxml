@@ -18,7 +18,7 @@
                                 <Insets left="10.0" />
                             </padding>
                         </VBox>
-                          <Text fx:id="productName" layoutX="13.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Gotham Pro Black; -fx-font-size: 16;" text="Name" textAlignment="CENTER" wrappingWidth="145.12972831726074" />
+                          <Text fx:id="articleName" layoutX="13.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Gotham Pro Black; -fx-font-size: 16;" text="Name" textAlignment="CENTER" wrappingWidth="145.12972831726074" />
                     </children>
                 </Pane>
             </children>

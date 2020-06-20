@@ -18,7 +18,7 @@ public class ArticolCardUser extends Articol{
     private Pane textPane;
 
     @FXML
-    private Text productName;
+    private Text articleName;
 
     Articol articol = null;
     ArticlesUser articlesController = null;
@@ -30,7 +30,7 @@ public class ArticolCardUser extends Articol{
 
     @FXML
     public Pane initialize() {
-        productName.setText(nume);
+        articleName.setText(nume);
         imagePane.setStyle(String.format("-fx-background-image: url(%s);", poza));
         paneContainer.setOnMouseClicked(mouseEvent -> {
             ArticolDialogUser articolDialogController =
