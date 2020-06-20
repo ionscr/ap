@@ -15,25 +15,21 @@ public class Admin {
     @FXML
     private BorderPane borderPane;
 
-    // handler to load addProduct scene on button click action
     @FXML
     void loadAddArticleScene(MouseEvent event) {
         loadPage("/add_article.fxml", event);
     }
 
-    // handler to load components scene on button click action
     @FXML
     void loadArticlesScene(MouseEvent event) {
         loadPage("/articles.fxml", event);
     }
 
-    // handler to load systems scene on button click action
     @FXML
     void loadQAScene(MouseEvent event) {
         loadPage("/qa.fxml", event);
     }
 
-    // handler to load home scene on button click action
     @FXML
     void loadHomeScene(MouseEvent event) {
         loadPage("/admin_dashboard.fxml", event);
@@ -51,23 +47,18 @@ public class Admin {
         borderPane.setCenter(rootNode);
     }
 
-    // utility to switch active tabs
     void loadPage(String scene, MouseEvent event) {
 
-        // remove active class from other navigation buttons
         for (Node btn : navBar.getChildren()) {
             btn.getStyleClass().remove("active");
         }
 
-        // add active class to opened tab
         ((Node) event.getSource()).getStyleClass().add("active");
 
-        // load required scene
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource(scene));
         } catch (IOException ex) {
-            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }
         borderPane.setCenter(root);
     }

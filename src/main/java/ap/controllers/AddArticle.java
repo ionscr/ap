@@ -27,13 +27,16 @@ public class AddArticle {
 
     @FXML
     void addNewArticle(ActionEvent event) throws IOException, JSONException {
-            final String POST_PARAMS = "{\n" +
-                    "    \"nume\": \"" + nameInput.getText() + "\",\r\n" +
-                    "    \"descriere\": \"" + descriptionInput.getText() + "\",\r\n" +
-                    "    \"tip\": \"" + isAntrenament.isSelected() + "\"\n}";
-
+        JSONObject jsonObject = new JSONObject();
+            try {
+            jsonObject.put("nume", nameInput.getText());
+            jsonObject.put("descriere", descriptionInput.getText() );
+            jsonObject.put("tip", isAntrenament.isSelected());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
             String response =
-                    API_Handler.makeRequest("PUT", "articles", POST_PARAMS).toString();
+                    API_Handler.makeRequest("PUT", "articles", jsonObject.toString()).toString();
             JSONObject record = new JSONObject(response);
             Liste.push(new Articol(
                     record.getInt("id"),
