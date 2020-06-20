@@ -38,8 +38,8 @@ public class AddArticle {
             Liste.push(new Articol(
                     record.getInt("id"),
                     record.getString("nume"),
-                    record.getString("descriere"),
                     record.getString("poza"),
+                    record.getString("descriere"),
                     record.getBoolean("tip")
             ));
     }
