@@ -21,4 +21,14 @@ public class TestPaginaInregistrare{
         nume = "asd123";
         assertFalse(inregistrare.isValidName(nume));
     }
+    @Test
+    public void testNumeFaraCifre(){
+        nume = "asd";
+        assertTrue(inregistrare.isValidName(nume));
+    }
+    @Test
+    public void testNumeCuSpatiu(){
+        nume = "asd asd";
+        assertTrue(inregistrare.isValidName(nume));
+    }
 }
