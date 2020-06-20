@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Liste {
-    static ArrayList<Articol> articoleList = new ArrayList<>();
-    static ArrayList<Intrebare> intrebareList = new ArrayList<>();
+    public static ArrayList<Articol> articoleList = new ArrayList<>();
+    public static ArrayList<Intrebare> intrebareList = new ArrayList<>();
 
 
     public static void push(Articol articol) {
