@@ -40,7 +40,7 @@
                     </styleClass>
                     <children>
                         <Text fill="WHITE" layoutX="14.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="descriptionText" text="Intrebari" />
-                        <Pane layoutX="14.0" layoutY="112.0" prefHeight="25.0" prefWidth="25.0" styleClass="articleIcon" />
+                        <Pane layoutX="14.0" layoutY="112.0" prefHeight="25.0" prefWidth="25.0" styleClass="QAIcon" />
                         <Text fx:id="totalQA" fill="WHITE" layoutX="51.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="count_nr" text="count">
                             <font>
                                 <Font name="Open Sans" size="12.0" />

@@ -66,11 +66,21 @@ Button {
   -fx-background-radius: 15;
 }
 
+.QAcardTemplate:hover {
+  -fx-scale-x: 1.03;
+  -fx-scale-y: 1.03;
+}
+.QAcardTemplate {
+  -fx-end-margin: 30px;
+  -fx-background-color: white;
+  -fx-effect: dropshadow(gaussian, rgba(8, 88, 207, 0.08), 7, 0, 0, 5);
+  -fx-background-radius: 15;
+}
+
 .cardTemplate:hover {
   -fx-scale-x: 1.03;
   -fx-scale-y: 1.03;
 }
-
 .combo-box {
   -fx-background-color: transparent;
   -fx-border-color: #9599A1;

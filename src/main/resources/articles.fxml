@@ -28,7 +28,7 @@
                             </children>
                         </AnchorPane>
                     </children></Pane>
-                <Text fill="#636363" layoutX="341.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleText" text="Componente disponibile">
+                <Text fill="#636363" layoutX="424.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleText" text="Articole">
                     <font>
                         <Font name="Arial Black" size="25.0" />
                     </font>
@@ -39,7 +39,7 @@
                     </font>
                 </Text>
                 <ComboBox fx:id="categoryBox" layoutX="150.0" layoutY="147.0" onAction="#filter" prefWidth="150.0" />
-                <Button fx:id="showAll" layoutX="764.0" layoutY="141.0" minWidth="32.0" mnemonicParsing="false" onAction="#renderAll" prefHeight="40.0" prefWidth="143.0" style="-fx-background-color: transparent; -fx-text-fill: #636363;" styleClass="descriptionText" text="show all" textFill="#636363">
+                <Button fx:id="showAll" layoutX="737.0" layoutY="142.0" minWidth="32.0" mnemonicParsing="false" onAction="#renderAll" prefHeight="44.0" prefWidth="199.0" style="-fx-background-color: transparent; -fx-text-fill: #636363;" styleClass="descriptionText" text="afiseaza toate" textFill="#636363">
                     <font>
                         <Font name="Arial" size="12.0" />
                     </font>

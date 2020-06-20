@@ -58,7 +58,8 @@ public class AdminDashboard {
                         record.getInt("id"),
                         record.getInt("id_user"),
                         record.getString("text"),
-                        record.getString("raspuns")));
+                        record.getString("raspuns"),
+                        record.getString("nume")));
             }
         }
     }

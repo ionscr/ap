@@ -71,4 +71,15 @@ public class Liste {
         }
         return null;
     }
+    public static int updateIntrebare(Intrebare updatedIntrebare) {
+        int i = 0;
+        for (Intrebare intrebare : intrebareList) {
+            if (intrebare.id == updatedIntrebare.id) {
+                intrebareList.set(i, updatedIntrebare);
+                return 1;
+            }
+            i++;
+        }
+        return 0;
+    }
 }
